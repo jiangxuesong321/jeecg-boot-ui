@@ -32,13 +32,13 @@
                 </td>
                 <td style="background-color:#fafafa; border: 1px solid #DDDDDD;" >
                   <div>
-                    设备标识:{{item.prodCode}}
+                    物料编码:{{item.prodCode}}
                   </div>
                   <div>
-                    设备名称:{{item.prodName}}
+                    物料名称:{{item.prodName}}
                   </div>
                   <div>
-                    设备分类:{{item.categoryName}}
+                    物料大类:{{item.categoryName}}
                   </div>
                   <div>
                     规格型号:{{item.speType}}

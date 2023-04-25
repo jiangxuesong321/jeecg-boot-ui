@@ -60,8 +60,8 @@
               <thead>
               <tr>
                 <th width="3%">序号</th>
-                <th width="10%">设备编码</th>
-                <th width="10%">设备名称</th>
+                <th width="10%">物料编码</th>
+                <th width="10%">物料名称</th>
                 <th width="10%">规格型号</th>
                 <th width="10%">出库数量</th>
                 <th width="10%">单位</th>

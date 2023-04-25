@@ -8,8 +8,8 @@
             基础信息
           </a-divider>
           <a-col :span="8">
-            <a-form-model-item label="设备名称" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="name">
-              <a-input v-model="model.name" placeholder="请输入设备名称"  :maxLength="50"></a-input>
+            <a-form-model-item label="物料名称" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="name">
+              <a-input v-model="model.name" placeholder="请输入物料名称"  :maxLength="50"></a-input>
             </a-form-model-item>
           </a-col>
 
@@ -20,7 +20,7 @@
           </a-col>
 
           <a-col :span="8">
-            <a-form-model-item label="设备分类" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="categoryId">
+            <a-form-model-item label="物料大类" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="categoryId">
               <a-cascader v-model="model.categoryId" :options="options" placeholder="请输入分类名称" />
             </a-form-model-item>
           </a-col>
@@ -248,13 +248,13 @@
             { required: true, message: '请选择采购员!'},
           ],
           code: [
-            { required: true, message: '请输入设备标识!'},
+            { required: true, message: '请输入物料编码!'},
           ],
            name: [
-              { required: true, message: '请输入设备名称!'},
+              { required: true, message: '请输入物料名称!'},
            ],
           categoryId: [
-            { required: true, message: '请输入设备分类!'},
+            { required: true, message: '请输入物料大类!'},
           ],
            model: [
               { required: true, message: '请输入设备类别!'},

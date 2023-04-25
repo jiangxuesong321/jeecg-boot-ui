@@ -4,8 +4,8 @@
       <a-form layout="inline" @keyup.enter.native="searchQuery">
         <a-row :gutter="24">
           <a-col :span="6">
-            <a-form-item label="设备名称">
-              <a-input placeholder="请输入设备名称" v-model="queryParam.name"></a-input>
+            <a-form-item label="物料名称">
+              <a-input placeholder="请输入物料名称" v-model="queryParam.name"></a-input>
             </a-form-item>
           </a-col>
           <a-col :span="6">
@@ -116,13 +116,13 @@ export default {
             }
           },
           {
-            title: '设备标识',
+            title: '物料编码',
             align: "center",
             dataIndex: 'code',
             width: 120,
           },
           {
-            title: '设备名称',
+            title: '物料名称',
             align: "center",
             dataIndex: 'name',
             width: 180,

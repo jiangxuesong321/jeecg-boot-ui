@@ -286,7 +286,7 @@
             width: 120,
           },
           {
-            title:'设备名称',
+            title:'物料名称',
             align:"center",
             dataIndex: 'prodName',
             sorter: true,

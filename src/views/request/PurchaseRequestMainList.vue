@@ -190,6 +190,13 @@ let columns = [
   		dataIndex: 'reqOrgId_dictText',
       width: 120,
   	},
+    {
+  		title: '需求来源',
+  		align: "center",
+      sorter: true,
+  		dataIndex: 'reqOrgId_dictText',
+      width: 120,
+  	},
   	{
   		title: '申请人',
   		align: "center",

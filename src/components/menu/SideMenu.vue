@@ -15,9 +15,10 @@
       :mode="mode"
       :style="smenuStyle">
     </s-menu>
-	<div>
-		<img src="../../assets/svg/kouhao.svg" style="width: 90%;margin-left: 5%;position: absolute;bottom: 20px;" />
-	</div>
+	<!-- <div>
+		 <img src="../../assets/svg/kouhao.svg" style="width: 90%;margin-left: 5%;position: absolute;bottom: 10px;" />  -->
+    <!-- <img src="../../assets/svg/kouhao.svg" style="width: 90%;margin-left: 5%;" /> -->
+	<!-- </div> -->
     <!-- <a-row>
       <a-col :span="12" style="color: white;font-weight: bold">
         <div style="font-size: 14px;margin-top: 140px;margin-left: 10px">
@@ -87,6 +88,8 @@
         let style = { 'padding': '0' }
         if (this.fixSiderbar) {
           style['height'] = 'calc(100% - 159px)'
+          // style['height'] = 'calc(100% - 76px)'
+
           style['overflow-y'] = 'auto'
           style['overflow-x'] = 'hidden'
         }

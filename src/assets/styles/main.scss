@@ -1,7 +1,8 @@
 $font-primary:"PingFang SC","Lantinghei SC","Microsoft YaHei", Arial,"Helvetica Neue","Open Sans","Hiragino Sans GB","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
 
 // Overrides
-$main-color: #00348B;
+ $main-color: #00348B;
+// $main-color: #2668db;
 $cyan-color: #0099BD;
 $other-color: #6C85AE;
 $yellow-color: #004694;
@@ -1137,6 +1138,8 @@ body{
 }
 .ant-menu.ant-menu-root > .ant-menu-item:first-child > a, .ant-menu.ant-menu-root > .ant-menu-item:first-child > a:hover{
   color: #fff!important;
+//   s color: #90CCFF!important;
+
 }
 .ant-menu{
 	color: #fff;
@@ -1219,31 +1222,40 @@ body{
 }
 .sider.light{
 	// 侧边菜单下面的  #1B2A3C #2C4A6A   #3B5CAF   #4768BC
-	background: #152887;
+	 background: #0d5cb3;
 }
 .sider.light .logo{
-  background-color: #152887!important;
+  background-color: #0d5cb3!important;
+
 }
 .sider.light .ant-menu-light{
 	// 侧边菜单
-	background: #152887;
-	height: calc(100% - 159px);
+	 background: #0d5cb3;
+	
+	// height: calc(100% - 159px);
+	height: calc(100% - 76px);
+
 	overflow-y: auto;
 }
 .ant-menu-submenu > .ant-menu{
 	// 侧边菜单下拉
-	background: #152887;
+	 background: #0d5cb3;
+	
 }
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-active{
 	// 侧边菜单鼠标悬浮
-	background: #000;
-	color: #90CCFF;
+	 background: #0270c1;
+	
+	// color: #000;
+	 color: #FFF;
+
   border-right: 5px #FFF solid;
 }
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
 	// 侧边菜单鼠标访问后
 	/* background: linear-gradient(90deg, #4A79D3 70%, #DDD 100%); */
-	background: #000000;
+	 background: #0270c1;
+
 	color: #FFFFFF !important;
 
 }
@@ -1252,10 +1264,15 @@ body{
 .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
 .ant-menu-submenu-active,
 .ant-menu-submenu-title:hover {
-  color: #90CCFF !important;
+//   color: #90CCFF 	!important;
+   color: #152887 	!important;
+
+
 }
 .ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title{
-	color: #FFF;
+	// color: #90CCFF;
+	 color: #FFF;
+
 }
 .ant-menu-inline .ant-menu-item::after{
 	border: none;
@@ -1508,7 +1525,7 @@ body{
 }
 .ant-menu-item > a:hover {
 //   color: #004694!important;
-	color: #90CCFF !important;
+	 color: #152887!important;
 }
 // .ant-btn{
 // 	height: 32px;

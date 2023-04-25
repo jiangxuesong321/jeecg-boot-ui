@@ -71,12 +71,12 @@
             }
           },
           {
-            title: '设备编码',
+            title: '物料编码',
             dataIndex: 'prodCode',
             width:140,
           },
           {
-            title: '设备名称',
+            title: '物料名称',
             dataIndex: 'prodName',
             width:180,
           },

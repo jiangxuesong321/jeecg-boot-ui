@@ -81,6 +81,7 @@ export default {
         // },
         {
           title:'报价价格',
+          align:"center",
           customRender:function (t,r,index) {
             let icon = "";
             if(r.currency == 'RMB'){

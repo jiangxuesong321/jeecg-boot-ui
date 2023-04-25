@@ -126,7 +126,7 @@ let columns = [
         }
     	},
       {
-        title: '设备名称',
+        title: '物料名称',
         align: "center",
         sorter: true,
         dataIndex: 'prodName',

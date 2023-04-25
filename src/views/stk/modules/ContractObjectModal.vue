@@ -10,7 +10,7 @@
             </a-form-item>
           </a-col>
           <a-col :span="6">
-            <a-form-item label="设备名称" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
+            <a-form-item label="物料名称" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
               <a-input placeholder="请输入合同名称" v-model="queryParam.prodName"></a-input>
             </a-form-item>
           </a-col>
@@ -102,7 +102,7 @@
             width:140,
           },
           {
-            title: '设备名称',
+            title: '物料名称',
             dataIndex: 'prodName',
             align:"center",
             width:180,

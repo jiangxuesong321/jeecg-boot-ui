@@ -221,7 +221,7 @@
       color: white;
       height: @height;
       /* background-color: @primary-color; */
-      transition: background 300ms;
+       transition: background 300ms;
 		background-image: url(../../assets/login_images/image2.jpg);
 		background-repeat: no-repeat;
 		background-size: 100% auto;

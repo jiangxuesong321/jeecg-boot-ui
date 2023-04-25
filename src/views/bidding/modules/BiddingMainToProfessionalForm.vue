@@ -155,7 +155,7 @@ export default {
             width:140,
           },
           {
-            title: '设备名称',
+            title: '物料名称',
             dataIndex: 'prodName',
             align:'center',
             width:140,
@@ -281,7 +281,7 @@ export default {
             width:120,
           },
           {
-            title: '设备名称',
+            title: '物料名称',
             dataIndex: 'prodName',
             align:'center',
             width:120,
@@ -356,7 +356,7 @@ export default {
             width:120,
           },
           {
-            title: '设备名称',
+            title: '物料名称',
             dataIndex: 'prodName',
             align:'center',
             width:120,
@@ -499,6 +499,7 @@ export default {
               title: '报价价格',
               dataIndex: 'amountTax',
               width: 120,
+              align:"center",
               customRender:function (t,r,index) {
                 let icon = "";
                 if(r.currency == 'RMB'){

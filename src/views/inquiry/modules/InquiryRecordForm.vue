@@ -106,7 +106,7 @@
               <thead>
               <tr style="height: 50px">
                 <th style="width: 40px;">序号</th>
-                <th style="width: 160px;">设备信息</th>
+                <th style="width: 160px;">物料信息</th>
                 <th style="width: 80px;">采购量(台)</th>
                 <th style="width: 180px;">供应商</th>
                 <th style="width: 55px;">币种</th>
@@ -130,13 +130,13 @@
                 <td style="background-color:#fafafa; border: 1px solid #DDDDDD; padding: 10px;" :rowspan="item.rowSpan"
                     v-if="idx == '0'">
                   <div style="margin-bottom: 10px;">
-                    设备标识:<span style="color: #0000CC!important;text-decoration: underline;">{{ item.prodCode }}</span>
+                    物料编号:<span style="color: #0000CC!important;text-decoration: underline;">{{ item.prodCode }}</span>
                   </div>
                   <div style="margin-bottom: 10px;">
-                    设备名称:{{ item.prodName }}
+                    物料名称:{{ item.prodName }}
                   </div>
                   <div style="margin-bottom: 10px;" v-if="model.reqType == '0'">
-                    设备分类:{{ item.categoryName }}
+                    物料分类:{{ item.categoryName }}
                   </div>
                   <div style="margin-bottom: 10px;" v-if="model.reqType == '0'">
                     规格型号:{{ item.speType }}

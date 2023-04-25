@@ -1,7 +1,7 @@
 <template>
   <div>
-	  <div style="position: absolute;left: 8%;top: 38%;">
-		  <img style="width: 480px;" src="../../assets/login_images/banner.png" />
+	  <div style="position: absolute;left: 4%;top: 5%;">
+		  <img style="width: 350px;" src="../../assets/login_images/banner.png" />
 	  </div>
 	  <div class="main" style="padding-bottom: 70px;">
 	    <a-form :form="form" class="user-layout-login" ref="formLogin" id="formLogin">

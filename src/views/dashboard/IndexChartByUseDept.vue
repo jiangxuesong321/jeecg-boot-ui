@@ -99,9 +99,9 @@
             <a-col :span="8" style="text-align: center;">
               <router-link :to="`/base/BasMaterialList`">
                 <a-card :bordered="false" style="width: 100%;height:60px;">
-                  <img slot="cover" alt="设备管理" src="~@/assets/svg/report_manage.svg"
+                  <img slot="cover" alt="物料管理" src="~@/assets/svg/report_manage.svg"
                        height="29px" width="27px" />
-                  <p style="text-align: center;margin-top:6px;">设备管理</p>
+                  <p style="text-align: center;margin-top:6px;">物料管理</p>
                 </a-card>
               </router-link>
             </a-col>

@@ -138,13 +138,13 @@ export default {
             }
           },
           {
-            title: '设备编号',
+            title: '物料编号',
             align: "center",
             dataIndex: 'prodCode',
             width: 120,
           },
           {
-            title: '设备名称',
+            title: '物料名称',
             align: "center",
             dataIndex: 'prodName',
             width: 180,

@@ -357,6 +357,7 @@ export default {
               title: '报价价格',
               dataIndex: 'amountTax',
               width: 120,
+              align:"center",
               customRender:function (t,r,index) {
                 let icon = "";
                 if(r.currency == 'RMB'){
@@ -456,6 +457,7 @@ export default {
               </div>
             )
           },
+          align:"center",
           dataIndex: 'itemTotal',
           width:120,
           customRender:(value, row, index) => {//本列的值,所有行数据包括本列,第几列。表体的数据列样式

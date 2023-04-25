@@ -179,7 +179,7 @@ import { iegAmount, isNullOrEmpty } from '@/utils/util'
       width:120,
     },
     {
-      title:'设备名称',
+      title:'物料名称',
       align:"center",
       sorter: true,
       dataIndex: 'deviceName',
@@ -529,7 +529,7 @@ import { iegAmount, isNullOrEmpty } from '@/utils/util'
         fieldList.push({type:'string',value:'supplierName',text:'供应商名称',dictCode:''})
         fieldList.push({type:'string',value:'contractName',text:'合同名称',dictCode:''})
         fieldList.push({type:'string',value:'projectName',text:'项目名称',dictCode:''})
-        fieldList.push({type:'string',value:'deviceName',text:'设备名称',dictCode:''})
+        fieldList.push({type:'string',value:'deviceName',text:'物料名称',dictCode:''})
         fieldList.push({type:'string',value:'deviceSerialNumber',text:'设备序号',dictCode:''})
         fieldList.push({type:'string',value:'qty',text:'数量',dictCode:''})
         this.superFieldList = fieldList
