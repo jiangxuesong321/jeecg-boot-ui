@@ -37,7 +37,7 @@ let setWatermark = (str,date) => {
   div.style.height = '90%'
   div.style.background = 'url(' + can.toDataURL('image/png') + ') left top repeat'
   //   document.body.appendChild(div)
-  div.style.opacity = '0.4' // 水印的透明度
+  div.style.opacity = '0' // 水印的透明度
   let show = document.getElementById("show1") // 控制水印显示的区域，设置id = show,表示在该范围内有水印
   if(show != null && show != undefined){
     show.appendChild(div)
