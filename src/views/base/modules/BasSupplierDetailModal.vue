@@ -279,6 +279,24 @@
 
                   </a-table>
                 </a-tab-pane>
+                <a-tab-pane tab="现场审查" key="4">
+                  <a-table
+                    ref="table"
+                    size="middle"
+                    bordered
+                    rowKey="id"
+                    :scroll="{x:true}"
+                    :columns="basSupplierResumeTable.columns"
+                    :dataSource="basSupplierResumeTable.dataSource"
+                  >
+                    <template slot-scope="text,record,index" slot="filePath">
+                      <j-upload v-model="record.filePath" disabled style="width: 200px"></j-upload>
+                    </template>
+                    <template slot-scope="text,record,index" slot="remark">
+                      <a-input v-model="record.remark" placeholder="请输入备注" type="textarea" disabled></a-input>
+                    </template>
+                  </a-table>
+                </a-tab-pane>
               </a-tabs>
             </a-col>
 
@@ -12421,6 +12439,41 @@
             }
           ]
         },
+        basSupplierResumeTable: {
+          loading: false,
+          dataSource: [],
+          columns: [
+            {
+              title: '序号',
+              dataIndex: '',
+              key:'rowIndex',
+              width:60,
+              align:"center",
+              customRender:function (t,r,index) {
+                return parseInt(index)+1;
+              }
+            },
+            {
+              title: '附件',
+              dataIndex: 'filePath',
+              width:200,
+              scopedSlots: { customRender: 'filePath' },
+            },
+            {
+              title: '备注',
+              dataIndex: 'remark',
+              width:400,
+              scopedSlots: { customRender: 'remark' },
+            },
+            {
+              title: '操作',
+              dataIndex: 'action',
+              align:"center",
+              width:80,
+              scopedSlots: { customRender: 'action' },
+            }
+          ]
+        },
         tabKey:'0',
         childKey:'0',
         activeKey:'0',
@@ -12507,6 +12560,8 @@
           this.fetchContractBySupp(1,this.model.id);
           //业务数据 - 付款申请单详情
           this.fetchPayApply(1,this.model.id);
+          // 现场审核
+          this.fetchResumeList(this.model.id);
         }
       },
       fetchFastList(supplierId){
@@ -12605,6 +12660,15 @@
         }
         getAction(url,param).then(res => {
           this.basSupplierContactTable.dataSource = res.result;
+        })
+      },
+      fetchResumeList(supplierId){
+        let url = "/srm/basSupplier/queryBasSupplierResumeByMainId";
+        let param = {
+          id : supplierId
+        }
+        getAction(url,param).then(res => {
+          this.basSupplierResumeTable.dataSource = res.result;
         })
       },
       close () {
