@@ -203,7 +203,7 @@
         size="middle"
         bordered
         rowKey="id"
-        :scroll="{x:true, y:500}"
+        :scroll="{x:true}"
         :columns="columns1"
         :dataSource="resumeList"
         :pagination="false"
@@ -553,7 +553,16 @@ let columns = [
           {
             title:'创建时间',
             align:"center",
-            dataIndex: 'createTime'
+            dataIndex: 'createTime',
+            width: 120,
+          },
+          {
+            title:'附件',
+            align:"center",
+            dataIndex: 'filePath',
+            customRender: (text) => {
+              return <j-upload vModel={text} disabled style={{width: '200px'}}></j-upload>
+            }
           },
         ],
         url: {
