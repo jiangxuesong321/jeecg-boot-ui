@@ -252,7 +252,7 @@
 
           <template slot-scope="text,record,index" slot="action">
             <a @click="delRow('qualification',index)" :disabled="formDisabled">删除</a>
-            <a @click='uploadFile(record,index)' :disabled="formDisabled" style='margin-left: 10px'>上传文件</a>
+            <a @click="uploadFile(record, index, 'qualification')" :disabled="formDisabled" style='margin-left: 10px'>上传文件</a>
           </template>
         </a-table>
       </a-tab-pane>
@@ -355,6 +355,31 @@ S
           </template>
         </a-table>
       </a-tab-pane>
+
+      <a-tab-pane tab="现场审查" key="4">
+        <a-button style="margin-bottom: 10px" type="primary" @click="addRow('resume')" :disabled="formDisabled">新增</a-button>
+        <a-table
+          ref="table"
+          size="middle"
+          bordered
+          rowKey="id"
+          :scroll="{x:true}"
+          :columns="basSupplierResumeTable.columns"
+          :dataSource="basSupplierResumeTable.dataSource"
+        >
+          <template slot-scope="text,record,index" slot="filePath">
+            <j-upload v-model="record.filePath" :trigger-change="true" disabled style="width: 200px"></j-upload>
+          </template>
+          <template slot-scope="text,record,index" slot="remark">
+            <a-input v-model="record.remark" placeholder="请输入备注" type="textarea" :disabled="formDisabled"></a-input>
+          </template>
+          <template slot-scope="text,record,index" slot="action">
+            <a @click="delRow('resume',index)" :disabled="formDisabled">删除</a>
+            <a @click="uploadFile(record, index, 'resume')" :disabled="formDisabled" style='margin-left: 10px'>上传文件</a>
+          </template>
+        </a-table>
+      </a-tab-pane>
+
     </a-tabs>
 
     <j-modal
@@ -366,7 +391,7 @@ S
       :fullscreen="false"
       @cancel="handleClose">
       <template slot="footer">
-        <a-button key="submit" @click="handleClose" type="primary" >取消</a-button>
+        <a-button key="cancel" @click="handleClose" type="primary" >取消</a-button>
         <a-button key="submit" @click="handleSubmit" type="primary" v-if="!disabled">提交</a-button>
       </template>
       <j-upload v-model="attachment" :trigger-change="true" :disabled="disabled"></j-upload>
@@ -11991,6 +12016,8 @@ export default {
           }
         ],
         attachment:'',
+        index: -1,
+        attachmentType: '',
         visible:false,
         activeKey:'0',
         labelCol: {
@@ -12225,6 +12252,42 @@ export default {
             }
           ]
         },
+        basSupplierResumeTable: {
+          loading: false,
+          dataSource: [],
+          columns: [
+            {
+              title: '序号',
+              dataIndex: '',
+              key:'rowIndex',
+              width:60,
+              align:"center",
+              customRender:function (t,r,index) {
+                return parseInt(index)+1;
+              }
+            },
+            {
+              title: '附件',
+              dataIndex: 'filePath',
+              width:200,
+              scopedSlots: { customRender: 'filePath' },
+            },
+            {
+              title: '备注',
+              dataIndex: 'remark',
+              width:400,
+              scopedSlots: { customRender: 'remark' },
+            },
+            {
+              title: '操作',
+              dataIndex: 'action',
+              align:"center",
+              width:80,
+              scopedSlots: { customRender: 'action' },
+            }
+          ]
+        },
+
         url: {
           add: "/srm/basSupplier/add",
           edit: "/srm/basSupplier/edit",
@@ -12255,6 +12318,7 @@ export default {
       },
     },
     created () {
+      
     },
     methods: {
 
@@ -12301,21 +12365,22 @@ export default {
         return temp != null ? temp : element
       },
       handleSubmit(){
-        let that = this;
-        that.$confirm({
-          title: "确认删除",
-          content: "是否删除选中数据?",
-          onOk: function () {
-            that.basSupplierQualificationTable.dataSource[that.index].qualUrl = that.attachment;
-            that.handleClose();
-          }
-        });
-
+        if (this.attachmentType === 'resume') {
+          this.basSupplierResumeTable.dataSource[this.index].filePath = this.attachment;
+        } else {
+          this.basSupplierQualificationTable.dataSource[this.index].qualUrl = this.attachment;
+        }
+        this.handleClose();
       },
-      uploadFile(record,index){
+      uploadFile(record,index, type){
         this.visible = true;
         this.index = index;
-        this.attachment = this.basSupplierQualificationTable.dataSource[this.index].qualUrl;
+        this.attachmentType = type;
+        if (type === 'resume') {
+          this.attachment = this.basSupplierResumeTable.dataSource[this.index].filePath;
+        } else {
+          this.attachment = this.basSupplierQualificationTable.dataSource[this.index].qualUrl;
+        }
       },
       handleClose(){
         this.visible = false;
@@ -12630,6 +12695,10 @@ export default {
             }
 
             that.model.basSupplierFastList = fast;
+
+            const resume = this.basSupplierResumeTable.dataSource;
+            that.model.basSupplierResumeList = resume;
+            
             that.$confirm({
               content: `是否确认提交`,
               onOk: () => {
@@ -12665,6 +12734,8 @@ export default {
               that.basSupplierBankTable.dataSource.splice(index,1);
             }else if(type == 'fast'){
               that.basSupplierFastTable.dataSource.splice(index,1);
+            }else if(type == 'resume'){
+              that.basSupplierResumeTable.dataSource.splice(index,1);
             }
           }
         });
@@ -12730,6 +12801,15 @@ export default {
                 address:''
               }
               that.basSupplierFastTable.dataSource.push(row);
+            }else if(type == 'resume'){
+              if(that.basSupplierResumeTable.dataSource == null){
+                that.basSupplierResumeTable.dataSource = [];
+              }
+              let row = {
+                filePath: '',
+                remark:'',
+              }
+              that.basSupplierResumeTable.dataSource.push(row);
             }
           }
         });
@@ -12741,15 +12821,16 @@ export default {
         this.basSupplierQualificationTable.dataSource = [];
         this.basSupplierBankTable.dataSource = [];
         this.basSupplierFastTable.dataSource = [];
+        this.basSupplierResumeTable.dataSource = [];
       },
       /** 调用完edit()方法之后会自动调用此方法 */
       edit(record) {
         this.model = record;
         if(this.model.id){
           this.fetchContactList(this.model.id);
-          this.fetchQualifictionList(this.model.id);
+          this.fetchQualificationList(this.model.id);
           this.fetchBankList(this.model.id);
-          this.fetchFastList(this.model.id);
+          this.fetchResumeList(this.model.id);
         }
       },
       fetchFastList(supplierId){
@@ -12772,7 +12853,7 @@ export default {
           this.basSupplierBankTable.dataSource = res.result;
         })
       },
-      fetchQualifictionList(supplierId){
+      fetchQualificationList(supplierId){
         this.basSupplierQualificationTable.dataSource = [];
         let url = "/srm/basSupplier/queryBasSupplierQualificationByMainId";
         let param = {
@@ -12791,7 +12872,16 @@ export default {
         getAction(url,param).then(res => {
           this.basSupplierContactTable.dataSource = res.result;
         })
-      }
+      },
+      fetchResumeList(supplierId){
+        let url = "/srm/basSupplier/queryBasSupplierResumeByMainId";
+        let param = {
+          id : supplierId
+        }
+        getAction(url,param).then(res => {
+          this.basSupplierResumeTable.dataSource = res.result;
+        })
+      },
     }
   }
 </script>

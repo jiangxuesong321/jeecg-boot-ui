@@ -38,7 +38,7 @@
       handleScanFileMessage (event) {
         // 根据上面制定的结构来解析iframe内部发回来的数据
         const data = event.data;
-         console.log(data);
+        //  console.log(data);
       },
 
       previewFiles (title,token,url) {
