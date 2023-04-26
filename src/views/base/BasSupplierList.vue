@@ -230,6 +230,14 @@
               </a-form-model-item>
             </a-col>
           </a-row>
+
+          <a-row>
+            <a-col :span="24">
+              <a-form-model-item label="附件" :labelCol="labelCol1" :wrapperCol="wrapperCol1">
+                <j-upload v-model="resumeAttrUrl" :trigger-change="true"></j-upload>
+              </a-form-model-item>
+            </a-col>
+          </a-row>
         </a-form-model>
       </j-form-container>
       <div class="drawer-footer" style="text-align: center;margin-top:15px;">
@@ -283,7 +291,6 @@
         <a-button key="cancel" @click="handleCancel" style="margin-left:10px;" type="primary" ghost>取消</a-button>
       </div>
     </a-drawer>
-
   </a-card>
 </template>
 
@@ -570,6 +577,9 @@ let columns = [
           black:0,
           active:0
         },
+        
+        // resume related
+        resumeAttrUrl: '',
       }
     },
     created() {
@@ -707,7 +717,8 @@ let columns = [
         let url = "/srm/basSupplierResume/add";
         let param = {
           suppId:that.model.id,
-          remark:that.model.remark
+          remark:that.model.remark,
+          filePath: this.resumeAttrUrl,
         }
         that.$confirm({
           title: "",
@@ -732,6 +743,7 @@ let columns = [
         this.visible1 = true;
         this.model = record;
         this.model.remark = '';
+        this.resumeAttrUrl = '';
       },
       checkApprove() {
         let url = "/srm/approveSetting/checkApprove";

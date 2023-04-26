@@ -59,6 +59,7 @@ Vue.component('vue-draggable-resizable', VueDraggableResizable)
 import * as echarts from 'echarts'
 
 Vue.prototype.$echarts = echarts
+Vue.prototype.$log = (obj)=> console.log(`Dev log => `, obj);
 
 Vue.prototype.rules = rules
 Vue.config.productionTip = false
