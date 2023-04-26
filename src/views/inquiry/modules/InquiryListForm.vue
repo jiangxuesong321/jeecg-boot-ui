@@ -305,7 +305,7 @@ export default {
           }
         },
         {
-          title: '购置设备名称',
+          title: '购置物料名称',
           dataIndex: 'prodName',
           width:120,
         },

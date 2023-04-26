@@ -188,7 +188,7 @@
               defaultValue:'',
             },
             {
-              title: '设备名称',
+              title: '物料名称',
               key: 'prodName',
                type: JVXETypes.input,
               width:"200px",
@@ -197,7 +197,7 @@
               validateRules: [{ required: true, message: '${title}不能为空' }],
             },
             {
-              title: '设备编码',
+              title: '物料编码',
               key: 'prodCode',
                type: JVXETypes.input,
               width:"200px",
@@ -206,7 +206,7 @@
               validateRules: [{ required: true, message: '${title}不能为空' }],
             },
             {
-              title: '设备分类',
+              title: '物料大类',
               key: 'catalogName',
                type: JVXETypes.input,
               width:"200px",

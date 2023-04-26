@@ -119,12 +119,12 @@
 				}
 			},
 			{
-				title: '设备标识',
+				title: '物料编码',
 				align: "center",
 				dataIndex: 'productCode'
 			},
 			{
-				title: '设备名称',
+				title: '物料名称',
 				//align: "center",
 				dataIndex: 'productName',
 				customRender: (value, row, index) => { //表体的数据列样式

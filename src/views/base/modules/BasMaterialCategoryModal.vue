@@ -8,10 +8,10 @@
     >
 
       <a-form-model ref="form" :model="model" :rules="validatorRules">
-        <a-form-model-item label="设备类型" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="pid">
+        <a-form-model-item label="物料大类" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="pid">
           <j-tree-select
             ref="treeSelect"
-            placeholder="请选择设备类型"
+            placeholder="请选择物料大类"
             v-model="model.pid"
             dict="bas_material_category,name,id"
             pidField="pid"

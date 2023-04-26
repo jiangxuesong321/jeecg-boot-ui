@@ -144,7 +144,7 @@ import { getAction } from '@api/manage'
           column: 'createTime',
           order: 'asc',
         },
-        description: '设备管理管理页面',
+        description: '物料管理管理页面',
         url: {
           list: "/srm/biddingEvaluateTemplate/list",
         },

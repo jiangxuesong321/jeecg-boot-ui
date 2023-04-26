@@ -2,7 +2,7 @@
 	<a-card :bordered="false">
 		<!-- 查询区域 -->
 		<div class="card-title">
-			设备分类
+			物料分类
 		</div>
 		<div class="table-page-search-wrapper">
 			<a-form layout="inline" @keyup.enter.native="searchQuery">
@@ -41,7 +41,7 @@
         <a style="margin-left: 24px" @click="onClearSelected">清空</a>
       </div> -->
 
-			<a-table ref="table" size="middle" rowKey="id" class="j-table-force-nowrap" :scroll="{x:true, y:500}"
+			<a-table ref="table" size="middle" rowKey="id" :scroll="{x:true, y:500}"
 				:columns="columns" :dataSource="dataSource" :pagination="ipagination" :loading="loading"
 				:expandedRowKeys="expandedRowKeys" @change="handleTableChange" @expand="handleExpand"
 				v-bind="tableProps" bordered>
@@ -118,13 +118,13 @@ import {
 		},
 		data() {
 			return {
-				description: '设备分类管理页面',
+				description: '物料分类管理页面',
 				// 表头
 				columns: [{
 						title: '名称',
 						dataIndex: 'name',
-						width:180,
-            align:'center',
+						width:140,
+            // align:'center',
             sorter: true,
 					},
 					{

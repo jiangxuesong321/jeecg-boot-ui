@@ -15,7 +15,7 @@
                 </a-form-item>
               </a-col>
               <a-col :span="6">
-                <a-form-item label="设备名称" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
+                <a-form-item label="物料名称" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
                   <a-input v-model="queryParam.prodName"></a-input>
                 </a-form-item>
               </a-col>
@@ -144,7 +144,7 @@ import { preciseNum } from '@/utils/util'
 //     		}
 //     	},
 //       {
-//         title: '设备名称',
+//         title: '物料名称',
 //         align: "center",
 //         dataIndex: 'prodName',
 //         width: 180,

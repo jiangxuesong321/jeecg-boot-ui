@@ -2,7 +2,7 @@
 	<div id="userLayout" :class="['user-layout-wrapper', device]">
 		<div class="container">
 			<a href="/">
-				<img style="position: absolute;left: 3rem;top: 2rem;" src="~@/assets/login_images/logo.png" class="logo" alt="logo">
+				<img style="position: absolute;left: 4%;top: 20%;" src="~@/assets/login_images/logo.png" class="logo" alt="logo">
 				<!--            <span class="title">德莱维SRM</span>-->
 			</a>
 			<!-- 	<div class="left-img">
@@ -93,7 +93,8 @@
 				text-decoration: none;
 			}
 			.logo {
-				width: auto;
+				// width: auto;
+				width: 350px;
 				height: auto;
 				vertical-align: top;
 				margin-right: 16px;

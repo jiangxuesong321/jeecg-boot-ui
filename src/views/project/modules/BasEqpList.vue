@@ -5,13 +5,13 @@
       <a-form layout="inline" @keyup.enter.native="searchQuery">
         <a-row :gutter="24">
           <a-col :xl="6" :lg="7" :md="8" :sm="24">
-            <a-form-item label="设备名称">
-              <a-input placeholder="请输入设备名称" v-model="queryParam.name"></a-input>
+            <a-form-item label="物料名称">
+              <a-input placeholder="请输入物料名称" v-model="queryParam.name"></a-input>
             </a-form-item>
           </a-col>
           <a-col :xl="6" :lg="7" :md="8" :sm="24">
-            <a-form-item label="设备标识">
-              <a-input placeholder="请输入设备标识" v-model="queryParam.code"></a-input>
+            <a-form-item label="物料编码">
+              <a-input placeholder="请输入物料编码" v-model="queryParam.code"></a-input>
             </a-form-item>
           </a-col>
           <a-col :xl="6" :lg="7" :md="8" :sm="24">
@@ -79,13 +79,13 @@ import { getAction } from '@api/manage'
             }
           },
           {
-            title:'设备标识',
+            title:'物料编码',
             align:"center",
             dataIndex: 'code',
             width: 180,
           },
           {
-            title:'设备名称',
+            title:'物料名称',
             align:"center",
             dataIndex: 'name',
             width: 260,
@@ -115,7 +115,7 @@ import { getAction } from '@api/manage'
             width: 120,
           },
           {
-            title:'设备分类',
+            title:'物料大类',
             align:"center",
             dataIndex: 'categoryName',
             width: 260,
@@ -127,7 +127,7 @@ import { getAction } from '@api/manage'
           column: 'createTime',
           order: 'asc',
         },
-        description: '设备管理管理页面',
+        description: '物料管理管理页面',
         url: {
           list: "/srm/basMaterial/list",
           delete: "/srm/basMaterial/delete",
@@ -160,7 +160,7 @@ import { getAction } from '@api/manage'
             width: 180,
           },
           {
-            title:'设备名称',
+            title:'物料名称',
             align:"center",
             dataIndex: 'name',
             width: 260,
@@ -221,13 +221,13 @@ import { getAction } from '@api/manage'
             }
           },
           {
-            title:'设备标识',
+            title:'物料编码',
             align:"center",
             dataIndex: 'code',
             width: 180,
           },
           {
-            title:'设备名称',
+            title:'物料名称',
             align:"center",
             dataIndex: 'name',
             width: 260,
@@ -257,7 +257,7 @@ import { getAction } from '@api/manage'
             width: 120,
           },
           {
-            title:'设备分类',
+            title:'物料大类',
             align:"center",
             dataIndex: 'categoryName',
             width: 260,

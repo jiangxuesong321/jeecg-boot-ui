@@ -189,7 +189,7 @@
       scopedSlots: { customRender: 'projectName' }
     },
     {
-      title:'设备名称',
+      title:'物料名称',
       align:"center",
       dataIndex: 'deviceName',
       width:150,

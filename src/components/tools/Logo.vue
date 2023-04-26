@@ -4,7 +4,9 @@
 
       <!-- update-begin- author:sunjianlei --- date:20190814 --- for: logo颜色根据主题颜色变化 -->
       <!-- <img v-if="navTheme === 'dark'" src="~@/assets/logo-white.png" alt="logo"> -->
-      <img src="~@/assets/login_images/login2.png" alt="logo">
+      <img src="~@/assets/login_images/luomu.png" alt="logo" >
+      <img src="~@/assets/login_images/login2.png" alt="logo" style="display: block;height:30px">
+      
       <!-- update-begin- author:sunjianlei --- date:20190814 --- for: logo颜色根据主题颜色变化 -->
 
       <!-- <h1 v-if="showTitle">{{ title }}</h1> -->
@@ -39,15 +41,15 @@
 </script>
 <style lang="less" scoped>
   /*缩小首页布 局顶部的高度*/
-  @height: 59px;
+  @height: 75px;
 
   .sider {
     box-shadow: none !important;
     .logo {
       height: @height !important;
-      line-height: @height !important;
+      line-height: 40px !important;
       box-shadow: none !important;
-      transition: background 300ms;
+      transition: background 250ms;
 
       a {
         color: white;

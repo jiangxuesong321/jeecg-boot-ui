@@ -13,17 +13,17 @@
         <a-card class="card" title="设备信息" :bordered="false" style="margin-top: 15px;">
           <a-row>
             <a-col :span="8">
-              <a-form-model-item label="设备标识" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
+              <a-form-model-item label="物料编码" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
                 {{model.prodCode}}
               </a-form-model-item>
             </a-col>
             <a-col :span="8">
-              <a-form-model-item label="设备名称" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
+              <a-form-model-item label="物料名称" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
                 {{model.prodName}}
               </a-form-model-item>
             </a-col>
             <a-col :span="8">
-              <a-form-model-item label="设备分类" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
+              <a-form-model-item label="物料大类" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
                 {{model.categoryName}}
               </a-form-model-item>
             </a-col>

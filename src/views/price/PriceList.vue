@@ -4,13 +4,13 @@
 			<a-form layout="inline" @keyup.enter.native="searchQuery">
 				<a-row :gutter="24">
 					<a-col :span="6">
-						<a-form-item label="设备标识" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
-							<a-input placeholder="请输入设备标识" v-model="queryParam.projCode"></a-input>
+						<a-form-item label="物料编码" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
+							<a-input placeholder="请输入物料编码" v-model="queryParam.projCode"></a-input>
 						</a-form-item>
 					</a-col>
 					<a-col :span="6">
-						<a-form-item label="设备名称" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
-							<a-input placeholder="请输入设备名称" v-model="queryParam.projName"></a-input>
+						<a-form-item label="物料名称" :labelCol="spans.labelCol3" :wrapperCol="spans.wrapperCol3">
+							<a-input placeholder="请输入物料名称" v-model="queryParam.projName"></a-input>
 						</a-form-item>
 					</a-col>
 					<a-col :span="6">
@@ -105,12 +105,12 @@
 						}
 					},
 					{
-						title: '设备标识',
+						title: '物料编码',
 						align: "center",
 						dataIndex: 'productCode'
 					},
 					{
-						title: '设备名称',
+						title: '物料名称',
 						//align: "center",
 						dataIndex: 'productName',
 						customRender: (value, row, index) => { //表体的数据列样式

@@ -16,17 +16,17 @@
     <a-row>
       <a-form ref="form" :model="model" >
           <a-col :span="8">
-            <a-form-item label="设备标识" :labelCol="labelCol" :wrapperCol="wrapperCol" >
+            <a-form-item label="物料编码" :labelCol="labelCol" :wrapperCol="wrapperCol" >
               {{model.code}}
             </a-form-item>
           </a-col>
           <a-col :span="8">
-            <a-form-item label="设备名称" :labelCol="labelCol" :wrapperCol="wrapperCol" >
+            <a-form-item label="物料名称" :labelCol="labelCol" :wrapperCol="wrapperCol" >
               {{model.name}}
             </a-form-item>
           </a-col>
           <a-col :span="8">
-            <a-form-item label="设备分类" :labelCol="labelCol" :wrapperCol="wrapperCol" >
+            <a-form-item label="物料大类" :labelCol="labelCol" :wrapperCol="wrapperCol" >
               {{model.categoryName}}
             </a-form-item>
           </a-col>

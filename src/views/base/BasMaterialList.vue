@@ -2,19 +2,19 @@
 	<a-card :bordered="false">
 		<!-- 查询区域 -->
 		<div class="card-title">
-			设备管理
+			物料管理
 		</div>
 		<div class="table-page-search-wrapper">
 			<a-form layout="inline" @keyup.enter.native="searchQuery">
 				<a-row :gutter="24">
 					<a-col :xl="6" :lg="7" :md="8" :sm="24">
-						<a-form-item label="设备名称">
-							<a-input placeholder="请输入设备名称" v-model="queryParam.name"></a-input>
+						<a-form-item label="物料名称">
+							<a-input placeholder="请输入物料名称" v-model="queryParam.name"></a-input>
 						</a-form-item>
 					</a-col>
 					<a-col :xl="6" :lg="7" :md="8" :sm="24">
-						<a-form-item label="设备标识">
-							<a-input placeholder="请输入设备标识" v-model="queryParam.code"></a-input>
+						<a-form-item label="物料编码">
+							<a-input placeholder="请输入物料编码" v-model="queryParam.code"></a-input>
 						</a-form-item>
 					</a-col>
           <a-col :xl="6" :lg="7" :md="8" :sm="24">
@@ -85,13 +85,13 @@
 				<span slot="action" slot-scope="text, record">
 					<a @click="handleEdit(record)">编辑</a>
 					<a-divider type="vertical" />
-					<a style="margin-right: 10px" @click="openModel(record,'1')">关联清单</a>
+					<a style="margin-right: 10px" @click="openModel(record,'1')">历史采购明细</a>
 				</span>
 			</a-table>
 			<div class="table-operator" :style="dataSource != null && dataSource.length > 0 ? 'z-index:99;margin-top:-43px;' : 'z-index:99;margin-top:10px;'">
 				<a-button @click="handleAdd" type="primary" icon="plus">新增</a-button>
-				<a-button type="primary" icon="download" @click="handleExportXls('设备管理')">导出</a-button>
-				<a-button type="primary" icon="download" @click="handleExportDemo('设备模板')">模板下载</a-button>
+				<a-button type="primary" icon="download" @click="handleExportXls('物料管理')">导出</a-button>
+				<a-button type="primary" icon="download" @click="handleExportDemo('物料模板')">模板下载</a-button>
 				<a-upload name="file" :showUploadList="false" :multiple="false" :headers="tokenHeader"
 					:action="importExcelUrl" @change="handleImportExcel">
 					<a-button type="primary" icon="import">导入</a-button>
@@ -138,7 +138,7 @@ import BasMaterialInfo from '@views/base/modules/BasMaterialInfo'
       // }
 		},
 		{
-			title: '设备标识',
+			title: '物料编码',
 			align: "center",
 			dataIndex: 'code',
       key: 'code',
@@ -162,7 +162,7 @@ import BasMaterialInfo from '@views/base/modules/BasMaterialInfo'
       },
     },
 		{
-			title: '设备名称',
+			title: '物料名称',
 			align: "center",
 			dataIndex: 'name',
       sorter: true,
@@ -272,7 +272,7 @@ import BasMaterialInfo from '@views/base/modules/BasMaterialInfo'
       }
 		},
 		{
-			title: '设备分类',
+			title: '物料类型',
 			align: "center",
 			dataIndex: 'categoryName',
       sorter: true,
@@ -391,7 +391,7 @@ import BasMaterialInfo from '@views/base/modules/BasMaterialInfo'
 					column: 'code',
 					order: 'asc',
 				},
-				description: '设备管理管理页面',
+				description: '物料管理管理页面',
 				url: {
 					list: "/srm/basMaterial/list",
 					delete: "/srm/basMaterial/delete",

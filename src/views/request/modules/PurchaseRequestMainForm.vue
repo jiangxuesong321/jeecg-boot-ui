@@ -94,7 +94,7 @@
           </a-row>
         </a-card>
 				<!-- 子表单区域 -->
-        <a-card class="card" title="设备清单" :bordered="false" v-if="model.reqType == '0'">
+        <a-card class="card" title="寻源清单" :bordered="false" v-if="model.reqType == '0'">
           <a-button type="primary" :disabled="formDisabled" style="float: right;overflow: hidden;margin-bottom: 10px;z-index: 99999" @click="openDialog">添加设备</a-button>
           <a-table
             ref="table"
@@ -291,13 +291,13 @@ export default {
             }
           },
           {
-            title: '设备标识',
+            title: '物料编号',
             dataIndex: 'prodCode',
             align:"center",
             width:140,
           },
           {
-            title: '设备名称',
+            title: '物料名称',
             dataIndex: 'prodName',
             width:180,
             align:"center",
@@ -317,14 +317,14 @@ export default {
             align:"center",
             scopedSlots: { customRender: 'speType' },
           },
+          // {
+          //   title: '模块规划产能(万片/月)',
+          //   dataIndex: 'capacity',
+          //   width:120,
+          //   align:"center",
+          // },
           {
-            title: '模块规划产能(万片/月)',
-            dataIndex: 'capacity',
-            width:120,
-            align:"center",
-          },
-          {
-            title: '设备类型',
+            title: '物料类型',
             dataIndex: 'model_dictText',
             width:120,
             align:"center",
@@ -349,19 +349,19 @@ export default {
             align:"center",
             scopedSlots: { customRender: 'qty' },
           },
-          {
-            title: '合计产能(万片/月)',
-            dataIndex: 'totalCapacity',
-            width:120,
-            align:"center",
-            customRender:function (t,r,index) {
-              if(isNotNullOrEmpty(r.qty) && isNotNullOrEmpty(r.singleCapacity)){
-                return r.qty * r.singleCapacity;
-              }else{
-                return 0;
-              }
-            }
-          },
+          // {
+          //   title: '合计产能(万片/月)',
+          //   dataIndex: 'totalCapacity',
+          //   width:120,
+          //   align:"center",
+          //   customRender:function (t,r,index) {
+          //     if(isNotNullOrEmpty(r.qty) && isNotNullOrEmpty(r.singleCapacity)){
+          //       return r.qty * r.singleCapacity;
+          //     }else{
+          //       return 0;
+          //     }
+          //   }
+          // },
           // {
           //   title: '预算单价',
           //   dataIndex: 'orderPrice',

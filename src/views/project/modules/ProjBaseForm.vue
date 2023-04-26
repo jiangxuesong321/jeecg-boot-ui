@@ -696,13 +696,13 @@ export default {
           }
         },
         {
-          title: '设备编码',
+          title: '物料编码',
           dataIndex: 'code',
           align: 'center',
           width: 140
         },
         {
-          title: '设备名称',
+          title: '物料名称',
           dataIndex: 'name',
           align: 'center',
           width: 200
