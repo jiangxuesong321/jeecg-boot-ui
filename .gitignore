@@ -19,3 +19,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+src/i18n/~$translations.xlsx
+src/i18n/index.js
+src/i18n/lang

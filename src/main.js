@@ -2,6 +2,7 @@
 import './config'
 
 import Vue from 'vue'
+import i18n from './i18n/index'
 import App from './App.vue'
 import Storage from 'vue-ls'
 import router from './router'
@@ -82,6 +83,7 @@ function main() {
   new Vue({
     router,
     store,
+    i18n,
     mounted () {
       store.commit('SET_SIDEBAR_TYPE', Vue.ls.get(SIDEBAR_TYPE, true))
       store.commit('TOGGLE_THEME', Vue.ls.get(DEFAULT_THEME, config.navTheme))

@@ -9,7 +9,7 @@
 				<a style="width: 70px; padding-top: 8px;">
 					<img style="width: 100%;" src="../../assets/login_images/left.png" />
 				</a>
-				<a class="log-form-title">德莱维SRM</a>
+				<a class="log-form-title">{{ $t('login_title') }}</a>
 				<a style="width: 70px; padding-top: 8px;">
 					<img style="width: 100%;" src="../../assets/login_images/right.png" />
 				</a>
@@ -18,7 +18,7 @@
 	        :activeKey="customActiveKey"
 	        :tabBarStyle="{ textAlign: 'left', borderBottom: 'unset' }"
 	        @change="handleTabClick">
-	        <a-tab-pane key="tab1" tab="账号登录">
+	        <a-tab-pane key="tab1" :tab="$t('login_subtitle')">
 
 	          <a-form-item class="item-div-padding">
 	            <a-input
@@ -97,7 +97,7 @@
 	      </a-tabs>
 
 	      <a-form-item>
-	        <a-checkbox v-decorator="['rememberMe', {initialValue: true, valuePropName: 'checked'}]" >自动登录</a-checkbox>
+	        <a-checkbox v-decorator="['rememberMe', {initialValue: true, valuePropName: 'checked'}]" >{{ $t('login_auto_login') }}</a-checkbox>
 	       <!-- <router-link :to="{ name: 'alteration'}" class="forge-password" style="float: right;">
 	          忘记密码
 	        </router-link>
@@ -114,13 +114,13 @@
 	          class="login-button"
 	          :loading="loginBtn"
 	          @click.stop.prevent="handleSubmit"
-	          :disabled="loginBtn">确定
+	          :disabled="loginBtn">{{ $t('login_btn_confirm') }}
 	        </a-button>
 	      </a-form-item>
 	    </a-form>
 
 	  	<div class="has-line">
-        德莱维
+        {{$t('login_company')}}
 	  	</div>
 
 	    <two-step-captcha
