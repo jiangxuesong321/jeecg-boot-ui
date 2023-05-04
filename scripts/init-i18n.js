@@ -1,6 +1,7 @@
 const path = require('path')
 const xlsx = require('node-xlsx')
 const createFile = require('./file-process')
+const { defaultLang } = require('./config/lang.config')
 
 const indexFile = path.resolve(__dirname, '../src/i18n/index.js')
 const translationsXlsx = path.resolve(__dirname, '../src/i18n/translations.xlsx')
@@ -36,8 +37,8 @@ const fileContent = [
 
 let exportStr = `
 export default new VueI18n({
-    locale: 'zh',
-    fallbackLocale: 'zh',
+    locale: '${defaultLang}',
+    fallbackLocale:  '${defaultLang}',
     messages: {
 `
 langs.map(l => {
